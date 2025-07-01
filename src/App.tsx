@@ -457,59 +457,62 @@ const App = () => {
           ))}
         </div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/80 via-red-900/70 to-amber-900/80"></div>
+        {/* Navy Blue Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/85 to-slate-800/90"></div>
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
-            صمم موقعك الإلكتروني
-            <br />
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+          {/* Main Heading - Responsive Text Sizes */}
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+            <span className="block mb-2">صمم موقعك الإلكتروني</span>
+            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent block">
               مع رواد الرقمية
             </span>
           </h1>
-          <h2 className="text-xl md:text-3xl font-medium mb-8 text-orange-100">
+          
+          {/* Subtitle - Responsive */}
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium mb-6 md:mb-8 text-orange-100 px-2">
             وارني بأعمالك - استشارة مجانية، ودعم كامل من البداية للنهاية
           </h2>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          {/* CTA Buttons - Responsive Stack */}
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 px-4">
             <button 
               onClick={() => setShowOrderForm(true)}
-              className="group bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 flex items-center space-x-3 space-x-reverse"
+              className="group bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 flex items-center space-x-3 space-x-reverse w-full sm:w-auto justify-center"
             >
               <span>اطلب موقعك الآن</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
             <a 
               href="#pricing"
-              className="group border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 space-x-reverse"
+              className="group border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 space-x-reverse w-full sm:w-auto justify-center"
             >
               <span>تعرف على الأسعار</span>
-              <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+              <Globe className="w-4 md:w-5 h-4 md:h-5 group-hover:rotate-12 transition-transform" />
             </a>
           </div>
 
-          {/* Quick Pricing Preview */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-              <h3 className="text-xl font-bold text-emerald-400 mb-2">الموقع التعريفي</h3>
-              <div className="text-3xl font-bold mb-2">
+          {/* Quick Pricing Preview - Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-2xl mx-auto px-4">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 md:p-6 text-center">
+              <h3 className="text-lg md:text-xl font-bold text-emerald-400 mb-2">الموقع التعريفي</h3>
+              <div className="text-2xl md:text-3xl font-bold mb-2">
                 <span className="text-emerald-400">1300</span>
-                <span className="text-lg text-gray-300"> ريال</span>
+                <span className="text-sm md:text-lg text-gray-300"> ريال</span>
               </div>
-              <div className="text-sm text-gray-300 line-through">بدلاً من 3000 ريال</div>
+              <div className="text-xs md:text-sm text-gray-300 line-through">بدلاً من 3000 ريال</div>
               <div className="text-xs text-emerald-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-              <h3 className="text-xl font-bold text-orange-400 mb-2">المتجر الإلكتروني</h3>
-              <div className="text-3xl font-bold mb-2">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 md:p-6 text-center">
+              <h3 className="text-lg md:text-xl font-bold text-orange-400 mb-2">المتجر الإلكتروني</h3>
+              <div className="text-2xl md:text-3xl font-bold mb-2">
                 <span className="text-orange-400">2300</span>
-                <span className="text-lg text-gray-300"> ريال</span>
+                <span className="text-sm md:text-lg text-gray-300"> ريال</span>
               </div>
-              <div className="text-sm text-gray-300 line-through">بدلاً من 4000 ريال</div>
+              <div className="text-xs md:text-sm text-gray-300 line-through">بدلاً من 4000 ريال</div>
               <div className="text-xs text-orange-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
           </div>
