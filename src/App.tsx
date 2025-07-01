@@ -120,6 +120,16 @@ const App = () => {
     alert('تم إرسال طلبك بنجاح! سيتم توجيهك إلى واتساب لإكمال التواصل.');
   };
 
+  // Function to handle navigation link clicks and close mobile menu
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    // Smooth scroll to section
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const services = [
     {
       icon: <Globe className="w-12 h-12 text-orange-500" />,
@@ -415,12 +425,42 @@ const App = () => {
           {isMenuOpen && (
             <div className="md:hidden py-4 border-t border-gray-200">
               <nav className="flex flex-col space-y-4">
-                <a href="#home" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الرئيسية</a>
-                <a href="#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">خدماتنا</a>
-                <a href="#portfolio" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">أعمالنا</a>
-                <a href="#pricing" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الأسعار</a>
-                <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">آراء العملاء</a>
-                <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">تواصل معنا</a>
+                <button 
+                  onClick={() => handleNavClick('#home')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  الرئيسية
+                </button>
+                <button 
+                  onClick={() => handleNavClick('#services')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  خدماتنا
+                </button>
+                <button 
+                  onClick={() => handleNavClick('#portfolio')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  أعمالنا
+                </button>
+                <button 
+                  onClick={() => handleNavClick('#pricing')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  الأسعار
+                </button>
+                <button 
+                  onClick={() => handleNavClick('#testimonials')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  آراء العملاء
+                </button>
+                <button 
+                  onClick={() => handleNavClick('#contact')} 
+                  className="text-gray-700 hover:text-orange-600 transition-colors font-medium text-right"
+                >
+                  تواصل معنا
+                </button>
                 <button 
                   onClick={() => {
                     setShowOrderForm(true);
@@ -462,21 +502,23 @@ const App = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          {/* Main Heading - Fixed for Mobile Visibility */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight text-white">
-            <span className="block mb-2 text-white drop-shadow-lg">صمم موقعك الإلكتروني</span>
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent block drop-shadow-lg">
+          {/* Main Heading - Enhanced for Maximum Visibility */}
+          <h1 className="text-white font-black mb-4 md:mb-6 leading-tight drop-shadow-2xl">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-2 md:mb-4 text-shadow-strong">
+              صمم موقعك الإلكتروني
+            </span>
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl text-shadow-strong">
               مع رواد الرقمية
             </span>
           </h1>
           
-          {/* Slogan - New Addition */}
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-orange-200 drop-shadow-lg">
+          {/* Slogan - Enhanced Visibility */}
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4 text-orange-200 drop-shadow-2xl text-shadow-strong">
             رواد التسويق الرقمي في العالم العربي
           </div>
           
-          {/* Subtitle - Updated Text */}
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium mb-6 md:mb-8 text-orange-100 px-2 drop-shadow-lg">
+          {/* Subtitle - Enhanced Visibility */}
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold mb-6 md:mb-8 text-orange-100 px-2 drop-shadow-2xl text-shadow-strong">
             وارتقي بأعمالك - استشارة مجانية، ودعم كامل من البداية للنهاية
           </h2>
           
@@ -490,13 +532,13 @@ const App = () => {
               <ArrowRight className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             
-            <a 
-              href="#pricing"
+            <button 
+              onClick={() => handleNavClick('#pricing')}
               className="group border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center space-x-3 space-x-reverse w-full sm:w-auto justify-center"
             >
               <span>تعرف على الأسعار</span>
               <Globe className="w-4 md:w-5 h-4 md:h-5 group-hover:rotate-12 transition-transform" />
-            </a>
+            </button>
           </div>
 
           {/* Quick Pricing Preview - Responsive Grid */}
