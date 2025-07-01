@@ -500,30 +500,30 @@ const App = () => {
         {/* Navy Blue Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/85 to-slate-800/90"></div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+        {/* Content - Moved down and adjusted spacing */}
+        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto mt-16 md:mt-20">
           {/* Main Heading - Enhanced for Maximum Visibility */}
-          <h1 className="text-white font-black mb-4 md:mb-6 leading-tight drop-shadow-2xl">
-            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-2 md:mb-4 text-shadow-strong">
+          <h1 className="text-white font-black mb-6 md:mb-8 leading-tight drop-shadow-2xl">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-3 md:mb-5 text-shadow-strong">
               صمم موقعك الإلكتروني
             </span>
-            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-2xl text-shadow-strong">
+            <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-2xl text-shadow-strong">
               مع رواد الرقمية
             </span>
           </h1>
           
           {/* Slogan - Enhanced Visibility */}
-          <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4 text-orange-200 drop-shadow-2xl text-shadow-strong">
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold mb-4 md:mb-6 text-orange-200 drop-shadow-2xl text-shadow-strong">
             رواد التسويق الرقمي في العالم العربي
           </div>
           
           {/* Subtitle - Enhanced Visibility */}
-          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold mb-6 md:mb-8 text-orange-100 px-2 drop-shadow-2xl text-shadow-strong">
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold mb-8 md:mb-10 text-orange-100 px-2 drop-shadow-2xl text-shadow-strong">
             وارتقي بأعمالك - استشارة مجانية، ودعم كامل من البداية للنهاية
           </h2>
           
           {/* CTA Buttons - Responsive Stack */}
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-8 md:mb-12 px-4">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-10 md:mb-12 px-4">
             <button 
               onClick={() => setShowOrderForm(true)}
               className="group bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:from-orange-700 hover:to-red-700 transition-all duration-300 shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 flex items-center space-x-3 space-x-reverse w-full sm:w-auto justify-center"
