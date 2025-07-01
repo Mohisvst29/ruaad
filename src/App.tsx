@@ -462,17 +462,22 @@ const App = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-          {/* Main Heading - Responsive Text Sizes */}
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
-            <span className="block mb-2">صمم موقعك الإلكتروني</span>
-            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent block">
+          {/* Main Heading - Fixed for Mobile Visibility */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight text-white">
+            <span className="block mb-2 text-white drop-shadow-lg">صمم موقعك الإلكتروني</span>
+            <span className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent block drop-shadow-lg">
               مع رواد الرقمية
             </span>
           </h1>
           
-          {/* Subtitle - Responsive */}
-          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium mb-6 md:mb-8 text-orange-100 px-2">
-            وارني بأعمالك - استشارة مجانية، ودعم كامل من البداية للنهاية
+          {/* Slogan - New Addition */}
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-orange-200 drop-shadow-lg">
+            رواد التسويق الرقمي في العالم العربي
+          </div>
+          
+          {/* Subtitle - Updated Text */}
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium mb-6 md:mb-8 text-orange-100 px-2 drop-shadow-lg">
+            وارتقي بأعمالك - استشارة مجانية، ودعم كامل من البداية للنهاية
           </h2>
           
           {/* CTA Buttons - Responsive Stack */}
