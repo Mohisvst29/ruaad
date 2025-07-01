@@ -22,7 +22,15 @@ import {
   Headphones,
   Palette,
   Code,
-  Rocket
+  Rocket,
+  ExternalLink,
+  Monitor,
+  Building,
+  GraduationCap,
+  Droplets,
+  Car,
+  Utensils,
+  Briefcase
 } from 'lucide-react';
 
 const App = () => {
@@ -34,8 +42,7 @@ const App = () => {
     name: '',
     phone: '',
     email: '',
-    projectType: '',
-    budget: '',
+    websiteActivity: '',
     description: '',
     plan: ''
   });
@@ -67,8 +74,7 @@ const App = () => {
     setSelectedPlan(planName);
     setFormData(prev => ({
       ...prev,
-      plan: planName,
-      budget: planPrice
+      plan: planName
     }));
     setShowOrderForm(true);
   };
@@ -76,8 +82,8 @@ const App = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.phone) {
-      alert('يرجى ملء جميع الحقول المطلوبة');
+    if (!formData.name || !formData.phone || !formData.websiteActivity) {
+      alert('يرجى ملء جميع الحقول المطلوبة (الاسم، رقم الجوال، نشاط الموقع)');
       return;
     }
 
@@ -88,8 +94,7 @@ const App = () => {
 📱 *رقم الهاتف:* ${formData.phone}
 📧 *البريد الإلكتروني:* ${formData.email || 'غير محدد'}
 📦 *الباقة المختارة:* ${formData.plan || 'غير محددة'}
-🎯 *نوع المشروع:* ${formData.projectType || 'غير محدد'}
-💰 *الميزانية:* ${formData.budget || 'غير محددة'}
+🎯 *نشاط الموقع:* ${formData.websiteActivity}
 📝 *وصف المشروع:* ${formData.description || 'لا يوجد وصف إضافي'}
 
 ---
@@ -106,8 +111,7 @@ const App = () => {
       name: '',
       phone: '',
       email: '',
-      projectType: '',
-      budget: '',
+      websiteActivity: '',
       description: '',
       plan: ''
     });
@@ -242,21 +246,87 @@ const App = () => {
       company: "شركة التقنية المتقدمة",
       rating: 5,
       comment: "خدمة ممتازة وتصميم رائع. فريق محترف ومتعاون.",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      icon: <Building className="w-12 h-12 text-orange-500" />
     },
     {
       name: "فاطمة العلي",
       company: "متجر الأناقة",
       rating: 5,
       comment: "موقع متجري الإلكتروني تجاوز توقعاتي. شكراً لكم!",
-      image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      icon: <ShoppingCart className="w-12 h-12 text-orange-500" />
     },
     {
       name: "خالد السعد",
       company: "مؤسسة النجاح",
       rating: 5,
       comment: "تعامل راقي وتسليم في الوقت المحدد. أنصح بهم بشدة.",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
+      icon: <Award className="w-12 h-12 text-orange-500" />
+    }
+  ];
+
+  const portfolio = [
+    {
+      title: "شركة عهود المياه",
+      url: "https://www.ohodwater.com/",
+      category: "شركة مياه",
+      status: "مكتمل",
+      icon: <Droplets className="w-6 h-6 text-blue-500" />
+    },
+    {
+      title: "موقع تجاري",
+      url: "https://sparkling-youtiao-b21292.netlify.app/",
+      category: "موقع تجاري",
+      status: "تحت الإنشاء",
+      icon: <Briefcase className="w-6 h-6 text-amber-500" />
+    },
+    {
+      title: "أكاديمية كاين - بدر",
+      url: "https://kain-academi-badr.vercel.app/",
+      category: "أكاديمية تعليمية",
+      status: "تحت الإنشاء",
+      icon: <GraduationCap className="w-6 h-6 text-amber-500" />
+    },
+    {
+      title: "العرابة الفريحة",
+      url: "https://www.alaraba-alfareha.com/",
+      category: "موقع تجاري",
+      status: "مكتمل",
+      icon: <Car className="w-6 h-6 text-blue-500" />
+    },
+    {
+      title: "إكستريم نانو",
+      url: "https://www.xtreme-nano.com/",
+      category: "شركة تقنية",
+      status: "مكتمل",
+      icon: <Zap className="w-6 h-6 text-blue-500" />
+    },
+    {
+      title: "الحازم الأول",
+      url: "https://www.alhazimalawal.com/ar",
+      category: "شركة خدمات",
+      status: "مكتمل",
+      icon: <Building className="w-6 h-6 text-blue-500" />
+    },
+    {
+      title: "مطعم",
+      url: "https://lively-semolina-294a8b.netlify.app/",
+      category: "مطعم",
+      status: "تحت الإنشاء",
+      icon: <Utensils className="w-6 h-6 text-amber-500" />
+    },
+    {
+      title: "مياه المدينة",
+      url: "https://almadenahwater.com/",
+      category: "شركة مياه",
+      status: "مكتمل",
+      icon: <Droplets className="w-6 h-6 text-blue-500" />
+    },
+    {
+      title: "الأثاثي السعودية",
+      url: "https://www.athathy-sa.com/",
+      category: "شركة أثاث",
+      status: "مكتمل",
+      icon: <Building className="w-6 h-6 text-blue-500" />
     }
   ];
 
@@ -265,6 +335,25 @@ const App = () => {
     { number: "300+", label: "عميل راضي", icon: <Users className="w-8 h-8" /> },
     { number: "5+", label: "سنوات خبرة", icon: <Clock className="w-8 h-8" /> },
     { number: "24/7", label: "دعم فني", icon: <MessageCircle className="w-8 h-8" /> }
+  ];
+
+  const websiteActivities = [
+    "موقع شركة",
+    "متجر إلكتروني",
+    "موقع شخصي",
+    "مدونة",
+    "موقع خدمات",
+    "موقع تعليمي",
+    "موقع طبي",
+    "موقع عقاري",
+    "موقع مطعم",
+    "موقع سياحي",
+    "موقع رياضي",
+    "موقع إخباري",
+    "منصة تعليمية",
+    "موقع حكومي",
+    "موقع خيري",
+    "أخرى"
   ];
 
   return (
@@ -294,6 +383,7 @@ const App = () => {
             <nav className="hidden md:flex space-x-8 space-x-reverse">
               <a href="#home" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الرئيسية</a>
               <a href="#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">خدماتنا</a>
+              <a href="#portfolio" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">أعمالنا</a>
               <a href="#pricing" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الأسعار</a>
               <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">آراء العملاء</a>
               <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">تواصل معنا</a>
@@ -327,6 +417,7 @@ const App = () => {
               <nav className="flex flex-col space-y-4">
                 <a href="#home" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الرئيسية</a>
                 <a href="#services" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">خدماتنا</a>
+                <a href="#portfolio" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">أعمالنا</a>
                 <a href="#pricing" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">الأسعار</a>
                 <a href="#testimonials" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">آراء العملاء</a>
                 <a href="#contact" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">تواصل معنا</a>
@@ -466,8 +557,53 @@ const App = () => {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">بعض أعمالنا</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              اطلع على مجموعة من المشاريع التي نفذناها بنجاح لعملائنا
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolio.map((project, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3 space-x-reverse">
+                    {project.icon}
+                    <div>
+                      <h3 className="font-bold text-gray-800">{project.title}</h3>
+                      <p className="text-sm text-gray-600">{project.category}</p>
+                    </div>
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    project.status === 'مكتمل' 
+                      ? 'bg-green-100 text-green-800' 
+                      : 'bg-amber-100 text-amber-800'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
+                
+                <a 
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 space-x-reverse bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-lg hover:from-orange-700 hover:to-red-700 transition-all duration-300 group-hover:shadow-lg"
+                >
+                  <span>زيارة الموقع</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-white">
+      <section id="pricing" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">باقاتنا وأسعارنا</h2>
@@ -543,7 +679,7 @@ const App = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
@@ -556,7 +692,7 @@ const App = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <div className="flex items-center space-x-4 space-x-reverse mb-4">
                   {feature.icon}
                   <h3 className="text-xl font-bold text-gray-800">{feature.title}</h3>
@@ -569,7 +705,7 @@ const App = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-white">
+      <section id="testimonials" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">آراء عملائنا</h2>
@@ -580,13 +716,11 @@ const App = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover ml-4"
-                  />
+                  <div className="flex justify-center items-center w-16 h-16 bg-orange-100 rounded-full ml-4">
+                    {testimonial.icon}
+                  </div>
                   <div>
                     <div className="font-bold text-gray-800">{testimonial.name}</div>
                     <div className="text-sm text-gray-600">{testimonial.company}</div>
@@ -636,7 +770,7 @@ const App = () => {
                   </div>
                   <div>
                     <div className="font-semibold">البريد الإلكتروني</div>
-                    <div className="text-gray-300">info@ruaaddigital.com</div>
+                    <div className="text-gray-300">sales@ruaadalraqamia.com</div>
                   </div>
                 </div>
                 
@@ -646,7 +780,7 @@ const App = () => {
                   </div>
                   <div>
                     <div className="font-semibold">الموقع</div>
-                    <div className="text-gray-300">المملكة العربية السعودية</div>
+                    <div className="text-gray-300">المدينة المنورة - شوران - حي النبلاء</div>
                   </div>
                 </div>
               </div>
@@ -718,8 +852,7 @@ const App = () => {
                       name: '',
                       phone: '',
                       email: '',
-                      projectType: '',
-                      budget: '',
+                      websiteActivity: '',
                       description: '',
                       plan: ''
                     });
@@ -736,7 +869,7 @@ const App = () => {
                     <CheckCircle className="w-6 h-6 text-orange-600" />
                     <div>
                       <div className="font-bold text-orange-800">تم اختيار باقة: {selectedPlan}</div>
-                      <div className="text-orange-600">السعر: {formData.budget} ريال</div>
+                      <div className="text-orange-600">السعر: {formData.plan === 'الموقع التعريفي' ? '1300' : formData.plan === 'المتجر الإلكتروني' ? '2300' : '3500'} ريال</div>
                       <div className="text-sm text-green-600">شامل دومين سنتين + استضافة مدى الحياة + تصميم هوية بصرية</div>
                     </div>
                   </div>
@@ -762,7 +895,7 @@ const App = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      رقم الهاتف *
+                      رقم الجوال *
                     </label>
                     <input
                       type="tel"
@@ -790,48 +923,23 @@ const App = () => {
                   />
                 </div>
 
-                {!selectedPlan && (
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        نوع المشروع
-                      </label>
-                      <select
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      >
-                        <option value="">اختر نوع المشروع</option>
-                        <option value="موقع تعريفي">موقع تعريفي</option>
-                        <option value="متجر إلكتروني">متجر إلكتروني</option>
-                        <option value="موقع شركة">موقع شركة</option>
-                        <option value="مدونة">مدونة</option>
-                        <option value="تطبيق ويب">تطبيق ويب</option>
-                        <option value="أخرى">أخرى</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        الميزانية المتوقعة
-                      </label>
-                      <select
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
-                      >
-                        <option value="">اختر الميزانية</option>
-                        <option value="أقل من 5000 ريال">أقل من 5000 ريال</option>
-                        <option value="5000 - 10000 ريال">5000 - 10000 ريال</option>
-                        <option value="10000 - 20000 ريال">10000 - 20000 ريال</option>
-                        <option value="20000 - 50000 ريال">20000 - 50000 ريال</option>
-                        <option value="أكثر من 50000 ريال">أكثر من 50000 ريال</option>
-                      </select>
-                    </div>
-                  </div>
-                )}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    نشاط الموقع *
+                  </label>
+                  <select
+                    name="websiteActivity"
+                    value={formData.websiteActivity}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  >
+                    <option value="">اختر نشاط الموقع</option>
+                    {websiteActivities.map((activity, index) => (
+                      <option key={index} value={activity}>{activity}</option>
+                    ))}
+                  </select>
+                </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -865,8 +973,7 @@ const App = () => {
                         name: '',
                         phone: '',
                         email: '',
-                        projectType: '',
-                        budget: '',
+                        websiteActivity: '',
                         description: '',
                         plan: ''
                       });
