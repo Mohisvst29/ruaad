@@ -144,7 +144,7 @@ const App = () => {
       name: "الموقع التعريفي",
       price: "1300",
       originalPrice: "3000",
-      color: "from-green-500 to-green-600",
+      color: "from-emerald-500 to-emerald-600",
       popular: false,
       features: [
         "تصميم احترافي متجاوب",
@@ -163,7 +163,7 @@ const App = () => {
       name: "المتجر الإلكتروني",
       price: "2300",
       originalPrice: "4000",
-      color: "from-blue-500 to-blue-600",
+      color: "from-orange-500 to-red-500",
       popular: true,
       features: [
         "جميع مميزات الموقع التعريفي",
@@ -184,7 +184,7 @@ const App = () => {
       name: "الموقع المتقدم",
       price: "3500",
       originalPrice: "6000",
-      color: "from-purple-500 to-purple-600",
+      color: "from-amber-500 to-orange-600",
       popular: false,
       features: [
         "جميع مميزات المتجر الإلكتروني",
@@ -367,7 +367,7 @@ const App = () => {
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 via-blue-900/70 to-purple-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-900/80 via-red-900/70 to-amber-900/80"></div>
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
@@ -403,23 +403,23 @@ const App = () => {
           {/* Quick Pricing Preview */}
           <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-              <h3 className="text-xl font-bold text-green-400 mb-2">الموقع التعريفي</h3>
+              <h3 className="text-xl font-bold text-emerald-400 mb-2">الموقع التعريفي</h3>
               <div className="text-3xl font-bold mb-2">
-                <span className="text-green-400">1300</span>
+                <span className="text-emerald-400">1300</span>
                 <span className="text-lg text-gray-300"> ريال</span>
               </div>
               <div className="text-sm text-gray-300 line-through">بدلاً من 3000 ريال</div>
-              <div className="text-xs text-green-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
+              <div className="text-xs text-emerald-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-              <h3 className="text-xl font-bold text-blue-400 mb-2">المتجر الإلكتروني</h3>
+              <h3 className="text-xl font-bold text-orange-400 mb-2">المتجر الإلكتروني</h3>
               <div className="text-3xl font-bold mb-2">
-                <span className="text-blue-400">2300</span>
+                <span className="text-orange-400">2300</span>
                 <span className="text-lg text-gray-300"> ريال</span>
               </div>
               <div className="text-sm text-gray-300 line-through">بدلاً من 4000 ريال</div>
-              <div className="text-xs text-blue-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
+              <div className="text-xs text-orange-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
           </div>
         </div>
@@ -478,10 +478,10 @@ const App = () => {
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {pricingPlans.map((plan, index) => (
-              <div key={index} className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${plan.popular ? 'ring-4 ring-blue-500 ring-opacity-50' : ''}`}>
+              <div key={index} className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 ${plan.popular ? 'ring-4 ring-orange-500 ring-opacity-50' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold">
+                    <span className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full text-sm font-bold">
                       الأكثر طلباً
                     </span>
                   </div>
@@ -517,7 +517,7 @@ const App = () => {
                     onClick={() => handlePlanSelect(plan.name, plan.price)}
                     className={`w-full py-4 px-6 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 ${
                       plan.popular 
-                        ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-blue-500/25' 
+                        ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg hover:shadow-orange-500/25' 
                         : `bg-gradient-to-r ${plan.color} text-white shadow-lg hover:shadow-xl`
                     }`}
                   >
@@ -534,7 +534,7 @@ const App = () => {
             </p>
             <button 
               onClick={() => setShowOrderForm(true)}
-              className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="bg-gradient-to-r from-amber-600 to-orange-700 text-white px-8 py-4 rounded-full font-semibold hover:from-amber-700 hover:to-orange-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               طلب عرض سعر مخصص
             </button>
@@ -731,12 +731,12 @@ const App = () => {
               </div>
 
               {selectedPlan && (
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-4 mb-6">
+                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-xl p-4 mb-6">
                   <div className="flex items-center space-x-3 space-x-reverse">
-                    <CheckCircle className="w-6 h-6 text-blue-600" />
+                    <CheckCircle className="w-6 h-6 text-orange-600" />
                     <div>
-                      <div className="font-bold text-blue-800">تم اختيار باقة: {selectedPlan}</div>
-                      <div className="text-blue-600">السعر: {formData.budget} ريال</div>
+                      <div className="font-bold text-orange-800">تم اختيار باقة: {selectedPlan}</div>
+                      <div className="text-orange-600">السعر: {formData.budget} ريال</div>
                       <div className="text-sm text-green-600">شامل دومين سنتين + استضافة مدى الحياة + تصميم هوية بصرية</div>
                     </div>
                   </div>
