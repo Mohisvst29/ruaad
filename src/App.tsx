@@ -153,7 +153,9 @@ const App = () => {
         "تحسين محركات البحث الأساسي",
         "ربط وسائل التواصل الاجتماعي",
         "شهادة SSL مجانية",
-        "استضافة لمدة سنة",
+        "دومين مجاني لمدة سنتين",
+        "استضافة مجانية مدى الحياة",
+        "تصميم هوية بصرية للشعار",
         "دعم فني لمدة 3 أشهر"
       ]
     },
@@ -171,6 +173,9 @@ const App = () => {
         "نظام الكوبونات والخصومات",
         "تقارير المبيعات",
         "لوحة تحكم متقدمة",
+        "دومين مجاني لمدة سنتين",
+        "استضافة مجانية مدى الحياة",
+        "تصميم هوية بصرية للشعار",
         "دعم فني لمدة 6 أشهر",
         "تدريب على استخدام النظام"
       ]
@@ -189,6 +194,9 @@ const App = () => {
         "تحليلات متقدمة",
         "نظام العضويات",
         "دعم متعدد اللغات",
+        "دومين مجاني لمدة سنتين",
+        "استضافة مجانية مدى الحياة",
+        "تصميم هوية بصرية شاملة للشعار",
         "دعم فني لمدة سنة كاملة",
         "صيانة دورية مجانية"
       ]
@@ -213,8 +221,8 @@ const App = () => {
     },
     {
       icon: <Palette className="w-8 h-8 text-orange-500" />,
-      title: "تصميم مخصص",
-      description: "تصاميم فريدة تناسب هويتك التجارية"
+      title: "تصميم هوية بصرية",
+      description: "تصميم شعار وهوية بصرية مميزة"
     },
     {
       icon: <Code className="w-8 h-8 text-orange-500" />,
@@ -401,6 +409,7 @@ const App = () => {
                 <span className="text-lg text-gray-300"> ريال</span>
               </div>
               <div className="text-sm text-gray-300 line-through">بدلاً من 3000 ريال</div>
+              <div className="text-xs text-green-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
@@ -410,6 +419,7 @@ const App = () => {
                 <span className="text-lg text-gray-300"> ريال</span>
               </div>
               <div className="text-sm text-gray-300 line-through">بدلاً من 4000 ريال</div>
+              <div className="text-xs text-blue-300 mt-2">+ دومين سنتين + استضافة مدى الحياة</div>
             </div>
           </div>
         </div>
@@ -462,7 +472,7 @@ const App = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">باقاتنا وأسعارنا</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              اختر الباقة التي تناسب احتياجاتك وميزانيتك
+              اختر الباقة التي تناسب احتياجاتك وميزانيتك - جميع الباقات تشمل دومين لسنتين واستضافة مدى الحياة
             </p>
           </div>
 
@@ -488,6 +498,9 @@ const App = () => {
                     </div>
                     <div className="text-gray-500 line-through text-lg">
                       بدلاً من {plan.originalPrice} ريال
+                    </div>
+                    <div className="mt-2 text-sm text-green-600 font-semibold">
+                      شامل دومين سنتين + استضافة مدى الحياة
                     </div>
                   </div>
 
@@ -724,6 +737,7 @@ const App = () => {
                     <div>
                       <div className="font-bold text-blue-800">تم اختيار باقة: {selectedPlan}</div>
                       <div className="text-blue-600">السعر: {formData.budget} ريال</div>
+                      <div className="text-sm text-green-600">شامل دومين سنتين + استضافة مدى الحياة + تصميم هوية بصرية</div>
                     </div>
                   </div>
                 </div>
